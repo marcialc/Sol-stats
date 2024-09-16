@@ -1,10 +1,5 @@
 import type { Config } from "tailwindcss";
 
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
-
-/** @type {import('tailwindcss').Config} */
 const config: Config = {
   content: ["./src/**/*.{tsx,ts,jsx,js,html}"],
   darkMode: "class",
@@ -99,22 +94,7 @@ const config: Config = {
     themes: ["light", "dark", "retro"],
   },
 
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("daisyui"),
-    addVariablesForColors,
-  ],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
 };
-
-function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-  );
-
-  addBase({
-    ":root": newVars,
-  });
-}
 
 export default config;

@@ -1,4 +1,3 @@
-import { BackgroundBeams } from "@/components/BackgroundBeams";
 import ThemeController from "@/components/ThemeController";
 import ChartSection from "@/containers/ChartSection";
 import CommentSection from "@/containers/CommentSection";
@@ -19,7 +18,6 @@ export default function Home() {
         <ChartSection tokenName={TOKEN_NAME} />
         <CommentSection />
       </main>
-      <BackgroundBeams />
     </div>
   );
 }

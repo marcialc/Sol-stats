@@ -19,7 +19,15 @@ const Modal = ({ buttonContent, children }: ModalProps) => {
         {buttonContent}
       </button>
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box flex">{children}</div>
+        <div className="modal-box flex">
+          <form method="dialog" className="sm:hidden block">
+            {/* if there is a button in form, it will close the modal */}
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              ✕
+            </button>
+          </form>
+          {children}
+        </div>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
         </form>
