@@ -70,7 +70,7 @@ const CommentThreads = ({ comments }: CommentThreadsProps) => {
   return (
     <div
       ref={commentSectionRef}
-      className="flex flex-col overflow-auto gap-4 p-4 pr-0.5 pb-20 max-h-[90vh]"
+      className="flex flex-col overflow-auto gap-4 p-4 pb-20 max-h-[90vh]"
     >
       {groupedComments.map((comment, index) => (
         <div key={index}>
